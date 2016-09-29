@@ -1,0 +1,31 @@
+<assembly>
+    <id>telecom</id>
+    <formats>
+        <format>jar</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <dependencySets>
+        <dependencySet>
+            <unpack>true</unpack>
+            <scope>compile</scope>
+            <!--
+            <excludes>
+                <exclude>org.apache.hadoop:*</exclude>
+            </excludes>
+            -->
+            <!-- very small jar -->
+            <includes>
+                <include>hbase:*</include>
+                <include>nlp:*</include>
+                <include>htrace:*</include>
+                <include>jedis:*</include>
+            </includes>
+        </dependencySet>
+    </dependencySets>
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.outputDirectory}</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>
